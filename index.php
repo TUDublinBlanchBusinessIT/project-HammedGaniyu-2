@@ -1,3 +1,11 @@
+<?php
+include "db.php";
+
+$brandSql = "SELECT * FROM brands";
+$brandResult = mysqli_query($conn, $brandSql);
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>

@@ -12,3 +12,6 @@ INSERT INTO brands (brand_name) VALUES
 ('Adidas'),
 ('Jordan'),
 ('New Balance');
+
+ALTER TABLE sneakers
+ADD brand_id INT;
