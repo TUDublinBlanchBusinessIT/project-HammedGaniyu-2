@@ -13,21 +13,26 @@ $brandResult = mysqli_query($conn, $brandSql);
 </head>
 <body>
 
-<h1>Add a Sneaker</h1>
-
 <form action="insert.php" method="POST">
-    <label>Brand:</label>
-    <input type="text" name="brand" required><br><br>
 
-    <label>Model:</label>
-    <input type="text" name="model" required><br><br>
-
-    <button type="submit">Add Sneaker</button>
-</form>
-
+Brand:
+<select name="brand_id">
+<?php
+while ($row = mysqli_fetch_assoc($brandResult)) {
+    echo "<option value='" . $row['brand_id'] . "'>" . $row['brand_name'] . "</option>";
+}
+?>
+</select>
 <br><br>
 
-<a href="display.php">View All Sneakers</a>
+Model:
+<input type="text" name="model">
+<br><br>
+
+<input type="submit" value="Add Sneaker">
+
+</form>
 
 </body>
 </html>
+
