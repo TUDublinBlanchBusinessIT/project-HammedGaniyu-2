@@ -71,6 +71,9 @@ $brandResult = mysqli_query($conn, $brandSql);
     
 
 </form>
+<br>
+<a href="display.php">View All Sneakers</a>
+
 
 </body>
 </html>

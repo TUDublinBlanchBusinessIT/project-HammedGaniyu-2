@@ -30,18 +30,15 @@ $sneakerResult = mysqli_query($conn, $sneakerSql);
 <?php
 while ($s = mysqli_fetch_assoc($sneakerResult)) {
 
-    $brandId = $s['brand_id'];
+     echo $s['brand'] . "<br>";
+     echo "Model: " . $s['model'] . "<br>";
+     echo "Colorway: " . $s['colorway'] . "<br>";
+     echo "Size: " . $s['size'] . "<br><br>";
+    
 
-    $brandSql = "SELECT brand_name FROM brands WHERE brand_id = $brandId";
-    $brandResult = mysqli_query($conn, $brandSql);
-    $b = mysqli_fetch_assoc($brandResult);
-
-    echo "<div class='item'>";
-    echo "<div class='brand'>" . $b['brand_name'] . "</div>";
-    echo "<div>" . $s['model'] . "</div>";
-    echo "</div>";
 }
 ?>
+<a href="index.php">Home</a>
 
 </body>
 </html>
