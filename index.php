@@ -39,7 +39,9 @@ $brandResult = mysqli_query($conn, $brandSql);
     <select name="brand_id">
         <?php
         while ($row = mysqli_fetch_assoc($brandResult)) {
-            echo "<option value='" . $row['brand_id'] . "'>" . $row['brand_name'] . "</option>";
+            $id = $row['brand_id'];
+            $name = $row['brand_name'];
+            echo "<option value = '$id'>$name</option>";
         }
         ?>
     </select>
@@ -47,7 +49,26 @@ $brandResult = mysqli_query($conn, $brandSql);
     <label>Model:</label>
     <input type="text" name="model">
 
+    <label>Colorway:</label>
+    <input type="text" name="colorway">
+    
+    <label>Size:</label>
+    <select name="size">
+     <option value="4">4</option>   
+     <option value="5">5</option>   
+     <option value="6">6</option>
+     <option value="7">7</option>
+     <option value="8">8</option>
+     <option value="9">9</option>
+     <option value="10">10</option>
+     <option value="11">11</option>
+     <option value="12">12</option>
+   </select>
+   
+
     <input type="submit" value="Add Sneaker">
+    
+    
 
 </form>
 
